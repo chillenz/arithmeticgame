@@ -45,6 +45,11 @@ async function startgame(){
         }
         numberDisplay.textContent = number;
         expression += String(number);
+        if (i%2===0){
+            game.style.backgroundColor = '#2aab11'
+        } else{
+            game.style.backgroundColor = '#20880c'
+        }
     }
     await sleep(parseFloat(timeInput.value.replace('s', ''))*1000);
     game.style.display = 'none';
@@ -69,6 +74,7 @@ function playagain(){
     resultPage.style.display = 'none';
     menu.style.display = 'flex';
     expression = ""
+    game.style.backgroundColor = '#20880c'
 }
 playAgainBtn.addEventListener('click', playagain)
 submit.addEventListener('click', submitanswer)
